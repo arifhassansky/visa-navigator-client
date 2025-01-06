@@ -4,9 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { authContext } from "../../authProvider/AuthProvider";
 import { toast } from "react-toastify";
+import { FaFacebook } from "react-icons/fa";
+import { imageUpload } from "../../utils/ImageBBUpload";
 const Register = () => {
-  const { createUser, googleSignIn, setEmail, updateUserProfile } =
-    useContext(authContext);
+  const {
+    createUser,
+    googleSignIn,
+    facebookSignIn,
+    setEmail,
+    updateUserProfile,
+  } = useContext(authContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -19,14 +26,23 @@ const Register = () => {
       .catch(() => {});
   };
 
-  const handleForm = (e) => {
+  const handlefacebookLogin = () => {
+    facebookSignIn()
+      .then(() => {
+        navigate(location.state ? location.state : "/");
+        toast.success("Login Successfull!");
+      })
+      .catch(() => {});
+  };
+  const handleForm = async (e) => {
     e.preventDefault();
 
     const form = e.target;
     const name = form.name.value;
-    const photo = form.photo.value;
+    const image = form.image.files[0];
     const email = form.email.value;
     const password = form.password.value;
+    const photo = await imageUpload(image);
 
     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
     if (!passwordRegex.test(password)) {
@@ -50,7 +66,7 @@ const Register = () => {
 
   return (
     <div
-      className="md:h-[604px] bg-cover bg-center flex flex-col-reverse md:flex-row justify-center items-center gap-10  px-10"
+      className="md:h-[604px] mt-16 md:mt-[91px] bg-cover bg-center flex flex-col-reverse md:flex-row justify-center items-center gap-10  px-10"
       style={{ backgroundImage: `url(${loginBg})` }}
     >
       <div>
@@ -65,17 +81,17 @@ const Register = () => {
               type="text"
               name="name"
               placeholder="Enter Your Name"
-              className="input input-bordered input-accent w-full max-w-xs"
+              className="input input-bordered input-accent w-full "
               required
             />
           </div>
           <div className="my-2">
             <label className="font-medium text-lg">Photo URL</label>
             <input
-              type="text"
-              name="photo"
-              placeholder="Enter Your Photo URL"
-              className="input input-bordered input-accent w-full max-w-xs"
+              type="file"
+              name="image"
+              placeholder="Enter Your Country Photo URL"
+              className="file-input file-input-success w-full"
               required
             />
           </div>
@@ -85,7 +101,7 @@ const Register = () => {
               type="email"
               name="email"
               placeholder="Enter Your Email"
-              className="input input-bordered input-accent w-full max-w-xs"
+              className="input input-bordered input-accent w-full"
               required
             />
           </div>
@@ -95,7 +111,7 @@ const Register = () => {
               type="password"
               name="password"
               placeholder="Enter Your Password"
-              className="input input-bordered input-accent w-full max-w-xs"
+              className="input input-bordered input-accent w-full"
               required
             />
           </div>
@@ -110,16 +126,20 @@ const Register = () => {
         </form>
         <div>
           <div className="divider divider-info">or</div>
-          <button
-            onClick={handleGoogleLogin}
-            className="bg-secondary btn hover:bg-primary text-white px-8 py-3 rounded-lg flex items-center justify-center w-full gap-2 "
-          >
-            <FcGoogle size={20} />
-            Register With Google
-          </button>
+          <div className="flex justify-center items-center gap-6">
+            <button onClick={handleGoogleLogin}>
+              <FcGoogle size={30} />
+            </button>
+            <button className="text-blue-500" onClick={handlefacebookLogin}>
+              <FaFacebook size={30} />
+            </button>
+          </div>
           <h2 className="mt-4 text-center mb-8">
             Already have an account?
-            <Link to="/login" className="text-primary font-medium underline">
+            <Link
+              to="/login"
+              className="text-primary font-medium underline ml-2"
+            >
               Login
             </Link>
           </h2>

@@ -43,7 +43,7 @@ const VisaDetails = () => {
       email,
     };
 
-    fetch(`https://visa-navigator-server-mu.vercel.app/appliedVisa`, {
+    fetch(`${import.meta.env.VITE_URL}/appliedVisa`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

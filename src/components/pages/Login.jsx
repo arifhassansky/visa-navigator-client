@@ -5,15 +5,25 @@ import { useContext, useState } from "react";
 
 import { toast } from "react-toastify";
 import { authContext } from "../../authProvider/AuthProvider";
+import { FaFacebook } from "react-icons/fa";
 
 const Login = () => {
-  const { signIn, googleSignIn, setEmail } = useContext(authContext);
+  const { signIn, googleSignIn, setEmail, facebookSignIn } =
+    useContext(authContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleGoogleLogin = () => {
     googleSignIn()
+      .then(() => {
+        navigate(location.state ? location.state : "/");
+        toast.success("Login Successfull!");
+      })
+      .catch(() => {});
+  };
+  const handlefacebookLogin = () => {
+    facebookSignIn()
       .then(() => {
         navigate(location.state ? location.state : "/");
         toast.success("Login Successfull!");
@@ -41,7 +51,7 @@ const Login = () => {
   };
   return (
     <div
-      className="md:h-[604px] bg-cover bg-center flex flex-col-reverse md:flex-row justify-center items-center md:gap-10 px-10"
+      className="md:h-[604px] mt-16 md:mt-[91px] bg-cover bg-center flex flex-col-reverse md:flex-row justify-center items-center md:gap-10 px-10"
       style={{ backgroundImage: `url(${loginBg})` }}
     >
       <form onSubmit={handleLogin}>
@@ -83,17 +93,21 @@ const Login = () => {
 
         <div className="divider divider-info">Or</div>
 
-        <button
-          onClick={handleGoogleLogin}
-          className="bg-secondary btn hover:bg-primary text-white px-8 py-2 rounded-lg flex items-center justify-center w-full gap-2"
-        >
-          <FcGoogle size={20} />
-          Login With Google
-        </button>
+        <div className="flex justify-center items-center gap-6">
+          <button onClick={handleGoogleLogin}>
+            <FcGoogle size={30} />
+          </button>
+          <button className="text-blue-500" onClick={handlefacebookLogin}>
+            <FaFacebook size={30} />
+          </button>
+        </div>
 
         <h2 className="mt-4 text-center mb-8">
           Don&apos;t have an account?
-          <Link to="/register" className="text-primary font-medium underline">
+          <Link
+            to="/register"
+            className="text-primary font-medium underline ml-2"
+          >
             Register
           </Link>
         </h2>

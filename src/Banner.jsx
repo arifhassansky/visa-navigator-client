@@ -61,7 +61,7 @@ const Banner = () => {
           itemIndex === index && (
             <div
               key={id}
-              className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black bg-opacity-50 transition-opacity duration-700 ease-in-out"
+              className="absolute min-h-screen inset-0 flex flex-col items-center justify-center text-center text-white bg-black bg-opacity-50 transition-opacity duration-700 ease-in-out"
             >
               <img
                 src={image1}

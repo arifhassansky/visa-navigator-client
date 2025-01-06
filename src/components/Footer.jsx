@@ -1,5 +1,6 @@
 import { FaPhone } from "react-icons/fa";
 import { MdAddLocation, MdOutlineMailOutline } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,47 +15,48 @@ const Footer = () => {
 
           <div className="flex items-center mt-2">
             <MdAddLocation className="text-4xl text-gray-300 mr-2" />
-            <span>14 Daisy Garden, Banasree Main Rd, Dhaka 1219</span>
+            <span>14 Daisy Garden, Mohammadpur, Dhaka 1207</span>
           </div>
 
           <div className="flex items-center mt-2">
             <FaPhone className="text-2xl text-gray-300 mr-2" />
-            <span>+8806926354</span>
+            <span>+8801960606195</span>
           </div>
 
           <div className="flex items-center mt-2">
             <MdOutlineMailOutline className="text-2xl text-gray-300 mr-2" />
-            <span>info@visanavigator.com</span>
+            <span>arifskypro@gmail.com</span>
           </div>
         </div>
 
         {/* Services Offered Section */}
         <nav>
           <h6 className="text-2xl font-bold mb-4">Services</h6>
-          <a
-            href="#"
+
+          <Link
+            to="/allVisas"
+            className="block mt-2 text-gray-300 hover:text-gray-400 transition-colors"
+          >
+            All visa
+          </Link>
+          <Link
+            to="/addVisa"
+            className="block mt-2 text-gray-300 hover:text-gray-400 transition-colors"
+          >
+            Add visa
+          </Link>
+          <Link
+            to="/myAddedVisas"
+            className="block mt-2 text-gray-300 hover:text-gray-400 transition-colors"
+          >
+            Added Visas
+          </Link>
+          <Link
+            to="/MyVisaApplications"
             className="block mt-2 text-gray-300 hover:text-gray-400 transition-colors"
           >
             Visa Application
-          </a>
-          <a
-            href="#"
-            className="block mt-2 text-gray-300 hover:text-gray-400 transition-colors"
-          >
-            Document Verification
-          </a>
-          <a
-            href="#"
-            className="block mt-2 text-gray-300 hover:text-gray-400 transition-colors"
-          >
-            Consulting
-          </a>
-          <a
-            href="#"
-            className="block mt-2 text-gray-300 hover:text-gray-400 transition-colors"
-          >
-            Legal Advisory
-          </a>
+          </Link>
         </nav>
 
         {/* Social Media Links Section */}

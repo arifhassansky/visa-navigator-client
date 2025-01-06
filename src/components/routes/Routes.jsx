@@ -24,8 +24,6 @@ const router = createBrowserRouter([
       {
         path: "/allVisas",
         element: <AllVisas />,
-        loader: () =>
-          fetch("https://visa-navigator-server-mu.vercel.app/getVisas"),
       },
       {
         path: "/visaDetails/:id",
@@ -35,9 +33,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://visa-navigator-server-mu.vercel.app/visaDetails/${params.id}`
-          ),
+          fetch(`${import.meta.env.VITE_URL}/visaDetails/${params.id}`),
       },
       {
         path: "/myAddedVisas",

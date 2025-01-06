@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Typewriter } from "react-simple-typewriter";
+import { RiWifiOffLine } from "react-icons/ri";
 
 const LatestVisas = () => {
   const [latestVisas, setLatestVisas] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://visa-navigator-server-mu.vercel.app/latestVisas")
+    fetch(`${import.meta.env.VITE_URL}/latestVisas`)
       .then((res) => res.json())
       .then((data) => {
-        setLatestVisas(data.slice(0, 6));
+        setLatestVisas(data.slice(0, 8));
       });
   }, []);
 
@@ -23,40 +23,46 @@ const LatestVisas = () => {
       <h2 className="text-4xl md:text-6xl font-bold text-center mb-8 font-secondary">
         Latest Visas
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {latestVisas.map((visa) => (
           <div
             key={visa._id}
-            className="border border-gray-200 rounded-xl shadow-lg overflow-hidden p-6"
+            className="border border-gray-200 rounded-xl shadow-lg hover:shadow-xl overflow-hidden p-4"
           >
             <img
               src={visa.countryPhoto}
               alt={visa.country}
               className="w-full h-48 object-cover rounded-xl hover:scale-105 transition duration-300"
             />
-            <div className="space-y-3">
-              <h3 className="text-xl mt-4 font-bold text-primary">
-                {visa.countryName}
-              </h3>
-              <p>
-                <strong>Visa Type:</strong> {visa.visaType}
-              </p>
-              <p>
-                <strong>Processing Time:</strong> {visa.processingTime}
-              </p>
-              <p>
-                <strong>Fee:</strong> ${visa.fee}
-              </p>
-              <p>
-                <strong>Validity:</strong> {visa.validity}
-              </p>
-              <p>
-                <strong>Application Method:</strong> {visa.applicationMethod}
-              </p>
+            <div className="space-y-1">
+              <div className="flex justify-between items-center">
+                <h3 className="text-lg mt-4 font-bold text-primary">
+                  {visa.countryName}
+                </h3>
+                <p className="mt-4 bg-green-200 px-2 rounded-md text-sm">
+                  {visa.visaType}
+                </p>
+              </div>
+              <div className="flex justify-between items-center pt-3">
+                <p className="text-sm">⏱️{visa.processingTime} Processing</p>
+                <p className="text-sm">💵 ${visa.fee}</p>
+              </div>
+              <div className="flex justify-between items-center pt-1 text-sm">
+                <p>📅 {visa.validity} Validity</p>
+                <p className="flex items-center gap-1 text-sm">
+                  {visa.applicationMethod == "Online" ? (
+                    "💻"
+                  ) : (
+                    <RiWifiOffLine />
+                  )}
+                  {visa.applicationMethod} apply
+                </p>
+              </div>
+
               <div className="pt-2">
                 <button
                   onClick={() => handleDetails(visa._id)}
-                  className="w-full bg-primary text-white hover:bg-secondary py-2 rounded-lg hover:bg-primary-dark transition"
+                  className="w-full bg-primary text-white hover:bg-secondary py-1 rounded-lg hover:bg-primary-dark transition"
                 >
                   See Details
                 </button>

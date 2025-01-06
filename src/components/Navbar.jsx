@@ -1,10 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { authContext } from "../authProvider/AuthProvider";
 import ThemeToggle from "./ThemeToggle";
+
 const Navbar = () => {
   const { user, logOut } = useContext(authContext);
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+
+  const isHomePage = pathname === "/";
+
+  useEffect(() => {
+    if (isHomePage) {
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 0);
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    } else {
+      setScrolled(true);
+    }
+  }, [isHomePage]);
 
   const navlinks = (
     <>
@@ -14,7 +31,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-primary font-black px-4 py-2 rounded"
-              : "px-4 py-2 rounded hover:text-secondary"
+              : "px-4 py-2 rounded text-white hover:text-secondary"
           }
         >
           Home
@@ -26,7 +43,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-primary font-black px-4 py-2 rounded"
-              : "px-4 py-2 rounded hover:text-secondary"
+              : "px-4 py-2 rounded text-white hover:text-secondary"
           }
         >
           All Visas
@@ -40,7 +57,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-primary font-bold px-4 py-2 rounded"
-                  : "px-4 py-2 rounded hover:text-secondary"
+                  : "px-4 py-2 rounded text-white hover:text-secondary"
               }
             >
               Add Visa
@@ -53,7 +70,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-primary font-bold px-4 py-2 rounded"
-                  : "px-4 py-2 rounded hover:text-secondary"
+                  : "px-4 py-2 rounded text-white hover:text-secondary"
               }
             >
               My Added Visas
@@ -66,7 +83,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-primary font-bold px-4 py-2 rounded"
-                  : "px-4 py-2 rounded hover:text-secondary"
+                  : "px-4 py-2 rounded text-white hover:text-secondary"
               }
             >
               My Visa Applications
@@ -82,7 +99,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-primary font-bold px-4 py-2 rounded"
-                  : "px-4 py-2 rounded hover:text-secondary"
+                  : "px-4 py-2 rounded text-white hover:text-secondary"
               }
             >
               Login
@@ -94,7 +111,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-primary font-medium px-4 py-2 rounded"
-                  : "px-4 py-2 rounded hover:text-secondary"
+                  : "px-4 py-2 rounded text-white hover:text-secondary"
               }
             >
               Register
@@ -104,8 +121,17 @@ const Navbar = () => {
       )}
     </>
   );
+
   return (
-    <div className="navbar w-11/12 mx-auto">
+    <div
+      className={`navbar w-full px-8 fixed z-50 top-0 ${
+        isHomePage
+          ? scrolled
+            ? "bg-black/60"
+            : "bg-transparent"
+          : "bg-black/60"
+      }`}
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -126,12 +152,12 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-52 p-2 shadow text-base"
+            className="menu-sm dropdown-content bg-black rounded-box z-[1] mt-3 w-52 p-2 shadow text-base"
           >
             {navlinks}
           </ul>
         </div>
-        <a className="w-60">
+        <a className="w-48">
           <img src={logo} />
         </a>
       </div>

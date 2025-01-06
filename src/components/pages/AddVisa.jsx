@@ -2,13 +2,14 @@ import { toast } from "react-toastify";
 import SectionTitle from "../SctionTitle";
 import { useContext } from "react";
 import { authContext } from "../../authProvider/AuthProvider";
+import { imageUpload } from "../../utils/ImageBBUpload";
 const AddVisa = () => {
   const { user } = useContext(authContext);
 
-  const handleForm = (e) => {
+  const handleForm = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const countryPhoto = form.countryPhoto.value;
+    const image = form.image.files[0];
     const countryName = form.countryName.value;
     const visaType = form.visaType.value;
     const processingTime = form.processingTime.value;
@@ -23,6 +24,8 @@ const AddVisa = () => {
       .filter((checkbox) => checkbox.checked)
       .map((checkbox) => checkbox.value);
 
+    const countryPhoto = await imageUpload(image);
+
     const visaDetails = {
       countryPhoto,
       countryName,
@@ -36,7 +39,7 @@ const AddVisa = () => {
       requiredDocuments,
       email,
     };
-    fetch("https://visa-navigator-server-mu.vercel.app/addVisa", {
+    fetch(`${import.meta.env.VITE_URL}/addVisa`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,19 +48,22 @@ const AddVisa = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        if (result.insertedId) {
-          toast.success("Visa Details Added Succesfully..!");
+        console.log(result);
+        if (result?.insertedId) {
+          toast.success("Visa Added Succesfully..!");
         }
       });
   };
 
   return (
-    <div>
-      <SectionTitle
-        title="Add Visa Details"
-        subTitle="Simplify visa management by adding essential visa information here."
-      />
-      <div className="w-11/12 mx-auto my-10">
+    <div className="mt-20">
+      <div className="pt-3">
+        <SectionTitle
+          title="Add Visa Details"
+          subTitle="Simplify visa management by adding essential visa information here."
+        />
+      </div>
+      <div className="w-11/12 mx-auto my-16">
         <form
           onSubmit={handleForm}
           className="md:grid md:grid-cols-2 space-y-4 md:space-y-0 gap-6 lg:w-2/3 mx-auto border rounded-lg shadow-lg px-4 md:px-10 py-8"
@@ -71,10 +77,10 @@ const AddVisa = () => {
               Country Photo
             </label>
             <input
-              type="text"
-              name="countryPhoto"
+              type="file"
+              name="image"
               placeholder="Enter Your Country Photo URL"
-              className="input input-bordered input-accent w-full rounded-lg"
+              className="file-input file-input-success w-full"
               required
             />
           </div>
