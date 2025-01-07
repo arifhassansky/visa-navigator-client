@@ -14,7 +14,7 @@ const AddVisa = () => {
     const visaType = form.visaType.value;
     const processingTime = form.processingTime.value;
     const ageRestriction = form.ageRestriction.value;
-    const fee = form.fee.value;
+    const fee = parseInt(form.fee.value);
     const validity = form.validity.value;
     const applicationMethod = form.applicationMethod.value;
     const description = form.description.value;
