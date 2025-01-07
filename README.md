@@ -13,7 +13,7 @@ Effortlessly navigate the intricate world of visa applications with the Visa Nav
 ### Project Screenshot 2
 
 <div align="center">
-  <img height="300" src="https://i.ibb.co.com/68cksWd/Screenshot-2025-01-08-033236.png" alt="Visa Navigator Portal Screenshot 2"/>
+  <img height="300" src="https://ibb.co.com/ccFHnns" alt="Visa Navigator Portal Screenshot 2"/>
 </div>
 
 ## 🌟 Key Features
