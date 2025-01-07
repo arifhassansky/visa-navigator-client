@@ -6,77 +6,88 @@ const Testimonials = () => {
     {
       title: "Memories That Will Last Forever",
       text: "I cannot express enough how satisfied I am with the web development services provided by Egens Lab from the initial.",
-      name: "Jordan Moriah",
+      name: "Surela Akter",
       role: "Founder, Travel Lab",
-      image: "https://i.ibb.co.com/5hBxrBp/1.webp",
+      image: "https://i.ibb.co.com/Cw6nq3F/surela.jpg",
+      rating: "★ ★ ★ ★ ★",
     },
     {
       title: "Journey Beautiful Indonesia",
       text: "I cannot express enough how satisfied I am with the web development services provided by Egens Lab from the initial.",
-      name: "Liam Nohkan",
-      role: "CEO, TourXpro",
-      image: "https://i.ibb.co.com/v1HZc3v/2.jpg",
+      name: "Bristy Akter",
+      role: "CEO, TravelX",
+      image: "https://i.ibb.co.com/ZzhDBd0/bristy.jpg",
+      rating: "★ ★ ★ ★ ",
     },
     {
       title: "Cultural Immersion at Its Best",
       text: "I cannot express enough how satisfied I am with the web development services provided by Egens Lab from the initial.",
-      name: "Jon Mark",
-      role: "Founder, Tourio",
-      image: "https://i.ibb.co.com/C14m0j4/3.jpg",
+      name: "Arif Hassan",
+      role: "Founder, Nedpro",
+      image: "https://i.ibb.co.com/8dphcXj/IMG-5483-01.jpg",
+      rating: "★ ★ ★ ★ ",
     },
     {
       title: "An Unforgettable Adventure",
       text: "The services provided were exceptional, and the team ensured everything was seamless from start to finish.",
-      name: "Sophia Carter",
+      name: "Irfan Khan",
       role: "Blogger, ExploreTheWorld",
-      image: "https://i.ibb.co.com/nkv6Lrg/4.jpg",
+      image:
+        "https://i.ibb.co.com/gFg88Xt/470175899-1674601013099659-7328407391152462961-n.jpg",
+      rating: "★ ★ ★ ★ ★",
     },
     {
       title: "A Seamless Travel Experience",
       text: "The professionalism and commitment of the team made my travel experience smooth and stress-free.",
-      name: "Michael Bennett",
-      role: "CEO, WanderPro",
-      image: "https://i.ibb.co.com/xq1jRJk/5.webp",
+      name: "Nabila Jahan",
+      role: "CEO, DressBD",
+      image: "https://i.ibb.co.com/NKTdQgy/vabi.jpg",
+      rating: "★ ★ ★ ★ ★",
     },
 
     {
       title: "Discovering Hidden Gems",
       text: "Thanks to the expert guidance, I discovered places I never knew existed and will cherish forever.",
-      name: "Samantha Blake",
+      name: "Rabbi",
       role: "Travel Influencer, HiddenPaths",
-      image: "https://i.ibb.co.com/721HR8J/6.jpg",
+      image: "https://i.ibb.co.com/XJjMLW5/rabby.jpg",
+      rating: "★ ★ ★ ",
     },
 
     {
       title: "Stress-Free Group Travel",
       text: "Organizing group tours became a breeze, and everything was flawlessly executed.",
-      name: "Ethan Green",
+      name: "Jahid Hasan",
       role: "Founder, GroupGo",
-      image: "https://i.ibb.co.com/YdHG2pb/7.jpg",
+      image: "https://i.ibb.co.com/Mk8jDmF/jahid.jpg",
+      rating: "★ ★ ★ ★ ★",
     },
 
     {
       title: "Authenticity in Every Journey",
       text: "Authentic experiences and local insights made my trip unforgettable.",
-      name: "Clara Johnson",
-      role: "Content Creator, TravelVistas",
-      image: "https://i.ibb.co.com/CmrkZh8/8.jpg",
+      name: "Sakib",
+      role: "Owner, TravelVistas",
+      image: "https://i.ibb.co.com/yqyP4xg/sakub.jpg",
+      rating: "★ ★ ★ ★ ",
     },
 
     {
       title: "Perfect Planning from Start to End",
       text: "Every detail was meticulously planned, ensuring a hassle-free and enjoyable trip.",
-      name: "David Roberts",
+      name: "Tanzim Tabassum",
       role: "CEO, ExploreWorldly",
-      image: "https://i.ibb.co.com/4VPrPC1/9.jpg",
+      image: "https://i.ibb.co.com/v3DXs9C/tanzim.jpg",
+      rating: "★ ★ ★ ★ ★",
     },
 
     {
       title: "Exceptional Support Throughout",
       text: "The support team was always available and went above and beyond to make my trip seamless.",
-      name: "Jessica Lane",
+      name: "Jannatul Dua",
       role: "Founder, TravelEase",
-      image: "https://i.ibb.co.com/mTDght2/10.jpg",
+      image: "https://i.ibb.co.com/8DwG0R3/dua.jpg",
+      rating: "★ ★ ★ ★ ",
     },
   ];
 
@@ -108,7 +119,7 @@ const Testimonials = () => {
               <div>
                 <div className="mb-4 flex justify-center">
                   <span className="text-yellow-400 text-lg font-semibold">
-                    ★ ★ ★ ★ ★
+                    {testimonial.rating}
                   </span>
                 </div>
                 <h3 className="text-xl font-bold">{testimonial.title}</h3>
