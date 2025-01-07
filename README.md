@@ -47,3 +47,16 @@ Effortlessly navigate the intricate world of visa applications with the Visa Nav
 
 - **Firebase**: [https://visa-navigator-41ce8.web.app/](https://visa-navigator-41ce8.web.app/)
 - **Netlify**: [https://visa-navigator.netlify.app/](https://visa-navigator.netlify.app/)
+
+## 💻 Local Setup Guide
+
+Follow these steps to run the project locally:
+
+### 1. Clone the repository
+
+First, clone the project repository to your local machine:
+
+```bash
+git clone https://github.com/arifhassansky/visa-navigator-client.git
+cd lingo-bingo
+
