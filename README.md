@@ -56,6 +56,17 @@ Effortlessly navigate the intricate world of visa applications with the Visa Nav
 - **sweetalert2**: "^11.14.5"
 - **swiper**: "^11.1.15"
 
+## 🚀 Technology Stats
+
+<div>
+  <img src="https://img.shields.io/badge/React-60%25-blue" alt="React Usage" />
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-30%25-green" alt="Tailwind CSS Usage" />
+  <img src="https://img.shields.io/badge/Firebase-10%25-orange" alt="Firebase Usage" />
+</div>
+
+- **React**: 60% of the application logic and UI.
+- **Tailwind CSS**: 30% for creating responsive, customizable designs.
+- **Firebase**: 10% for authentication and database management.
 
 ## 📖 How to Use
 
