@@ -10,6 +10,20 @@ Effortlessly navigate the intricate world of visa applications with the Visa Nav
 - **Interactive User Experience**: Advanced search, filters, and a dark/light mode toggle.
 - **Responsive Design**: Optimized for mobile, tablet, and desktop devices.
 
+## 📸 Project Screenshots
+
+### Project Screenshot 1
+
+<div align="center">
+  <img height="300" src="https://i.ibb.co.com/Fq3sgGp/Screenshot-2025-01-08-033203.png" alt="Visa Navigator Portal Screenshot 1"/>
+</div>
+
+### Project Screenshot 2
+
+<div align="center">
+  <img height="300" src="https://i.ibb.co.com/68cksWd/Screenshot-2025-01-08-033236.png" alt="Visa Navigator Portal Screenshot 2"/>
+</div>
+
 ## 🛠️ Tech Stack
 
 ### Frontend:
