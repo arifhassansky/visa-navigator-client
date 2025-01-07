@@ -39,6 +39,23 @@ Effortlessly navigate the intricate world of visa applications with the Visa Nav
 - **Express.js**: Web framework for building backend services.
 - **MongoDB**: NoSQL database for storing user data and bookings.
 
+## 🛠 Dependencies
+
+"firebase": "^11.0.2",
+"localforage": "^1.10.0",
+"lottie-react": "^2.4.0",
+"match-sorter": "^8.0.0",
+"react": "^18.3.1",
+"react-dom": "^18.3.1",
+"react-fast-marquee": "^1.6.5",
+"react-icons": "^5.4.0",
+"react-router-dom": "^7.0.2",
+"react-simple-typewriter": "^5.0.1",
+"react-toastify": "^10.0.6",
+"sort-by": "^1.2.0",
+"sweetalert2": "^11.14.5",
+"swiper": "^11.1.15"
+
 
 ## 📖 How to Use
 
