@@ -2,14 +2,6 @@
 
 Effortlessly navigate the intricate world of visa applications with the Visa Navigator Portal, your ultimate travel companion. Whether you're planning a trip, studying abroad, or seeking international employment, our platform offers a streamlined experience to check visa requirements, apply online with ease, and monitor your application status in real-time. Designed to save time and reduce frustration, Visa Navigator provides clear, accurate information and essential tools all in one place, ensuring that every step of your visa journey is transparent, secure, and hassle-free.
 
-## 🌟 Key Features
-
-- **Comprehensive Visa Management**: Add, update, delete, and view visa details seamlessly.
-- **Secure Authentication**: Login/register via email or Google for safe and easy access.
-- **Real-Time Application Tracking**: Stay updated on the status of your applications.
-- **Interactive User Experience**: Advanced search, filters, and a dark/light mode toggle.
-- **Responsive Design**: Optimized for mobile, tablet, and desktop devices.
-
 ## 📸 Project Screenshots
 
 ### Project Screenshot 1
@@ -23,6 +15,14 @@ Effortlessly navigate the intricate world of visa applications with the Visa Nav
 <div align="center">
   <img height="300" src="https://i.ibb.co.com/68cksWd/Screenshot-2025-01-08-033236.png" alt="Visa Navigator Portal Screenshot 2"/>
 </div>
+
+## 🌟 Key Features
+
+- **Comprehensive Visa Management**: Add, update, delete, and view visa details seamlessly.
+- **Secure Authentication**: Login/register via email or Google for safe and easy access.
+- **Real-Time Application Tracking**: Stay updated on the status of your applications.
+- **Interactive User Experience**: Advanced search, filters, and a dark/light mode toggle.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop devices.
 
 ## 🛠️ Tech Stack
 
