@@ -31,11 +31,14 @@ Effortlessly navigate the intricate world of visa applications with the Visa Nav
 
 - **Netlify** (client-side) and **Vercel** (server-side).
 
-## 🎨 Design Highlights
+## 🌟 Key Technologies
 
-- Modern and unique layout inspired by premium designs from [ThemeForest](https://themeforest.net).
-- Intuitive navigation with protected routes and state persistence.
-- Engaging animations using **React Awesome Reveal** and **React Simple Typewriter**.
+- **Tailwind CSS**: Utility-first CSS framework for custom designs.
+- **React**: JavaScript library for building user interfaces.
+- **JavaScript**: Core programming language for application functionality.
+- **Express.js**: Web framework for building backend services.
+- **MongoDB**: NoSQL database for storing user data and bookings.
+
 
 ## 📖 How to Use
 
