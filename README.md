@@ -1,5 +1,6 @@
 # 🌐 Visa Navigator Portal
 
+## Project Overview
 Effortlessly navigate the intricate world of visa applications with the Visa Navigator Portal, your ultimate travel companion. Whether you're planning a trip, studying abroad, or seeking international employment, our platform offers a streamlined experience to check visa requirements, apply online with ease, and monitor your application status in real-time. Designed to save time and reduce frustration, Visa Navigator provides clear, accurate information and essential tools all in one place, ensuring that every step of your visa journey is transparent, secure, and hassle-free.
 
 ## 📸 Project Screenshots
